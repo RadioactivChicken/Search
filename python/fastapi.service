@@ -1,0 +1,17 @@
+[Unit]
+Description=FastAPI Python Server
+After=network.target
+
+[Service]
+User=python
+Group=python
+WorkingDirectory=/usr/api/
+ExecStart=fastapi run main.py --host 127.0.0.1
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/fastapi/fastapi.log
+StandardError=append:/var/log/fastapi/fastapi-error.log
+
+[Install]
+WantedBy=multi-user.target
+

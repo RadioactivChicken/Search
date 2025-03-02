@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <title>Search</title>
+</head>
+<body>
+
+    <div class="nav">
+        <button onclick="showForm('form1')">Search</button>
+        <button onclick="showForm('form2')">Input</button>
+    </div>
+
+
+    <div id="form1" class="form-container">
+    <h1>Search</h1>
+    <form onsubmit="forwardSession(event);">
+        <label for="s_url">Search:</label>
+        <input type="text" id="s_url" name="s_url" required>
+        <br>
+        <button type="submit">Forward</button>
+    </form>
+    <pre id="forward_result"></pre>
+    </div>
+
+
+    <div id="form2" class="form-container active">
+    	<h1>Input Form</h1>
+    	<form onsubmit="searchAPI(event);">
+    	    <label for="key">Key:</label>
+    	    <input type="text" id="key" name="key" required>
+    	    <br>
+    	    <label for="url">URL:</label>
+    	    <input type="text" id="url" name="url">
+    	    <br>
+    	    <button type="submit">Search</button>
+    	</form>
+    	<div id="notification" class="notification"></div>
+    </div>
+
+</body>
+</html>
+
